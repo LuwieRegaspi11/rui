@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(235deg, #4A90E2, #A8C0FF);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            border-radius: 12px;
+            padding: 25px;
+            background-color: #ffffff;
+            width: 40%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 22px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Add your Feedback</h1>
+            <form action="/entries" method="post">
+                <label>Title</label>
+                <input type="text" name="title" required>
+
+                <label>Date</label>
+                <input type="date" name="date" required>
+
+                <label>Message</label>
+                <textarea name="description" rows="10" cols="10" required></textarea>
+
+                <button type="submit" name="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
